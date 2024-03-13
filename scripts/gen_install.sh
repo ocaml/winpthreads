@@ -1,9 +1,13 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-echo 'share: ['
+# To get a reproducible ordering of the files
+LANG=C
 
-for file in $(ls include/*.h src/*.h src/*.c | sort | sed -e 's|/|\\\\|g'); do
-  echo "  \"$file\" {\"$file\"}"
+printf 'share: [\n'
+
+for file in include/*.h src/*.[ch]; do
+  f="${file//\//\\\\}"
+  printf '  "%s" {"%s"}\n' "$f" "$f"
 done
 
-echo ']'
+printf ']\n'

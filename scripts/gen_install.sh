@@ -3,11 +3,11 @@
 # To get a reproducible ordering of the files
 LANG=C
 
-printf 'share: [\n'
+echo 'share: ['
 
 for file in include/*.h src/*.[ch]; do
   f="${file//\//\\\\}"
   printf '  "%s" {"%s"}\n' "$f" "$f"
 done
 
-printf ']\n'
+echo ']'

@@ -7,3 +7,4 @@ license: "BSD-3-Clause AND MIT"
 synopsis: "Posix Threads for Windows (winpthreads) Sources"
 description: "Source package for winpthreads. Installs the required files for
 compiling winpthreads as part of an MSVC OCaml build."
+available: os = "win32"

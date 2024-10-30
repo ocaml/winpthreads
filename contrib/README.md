@@ -6,16 +6,17 @@ switch, and this directory is then passed to OCaml's `configure` script by the
 compiler opam packages.
 
 Releases are versioned using the date of the commit and an epoch number,
-e.g. 20240209-1 for d635af4d9. `scripts/gen_install.sh` generates an opam
+e.g. 20240209-1 for d635af4d9. `contrib/gen_install.sh` generates an opam
 `.install` file.
 
 Releasing winpthreads involves creating a branch which merges an upstream commit
-with this branch and then committing the generated winpthreads.install. Taking
+with this branch and then committing the generated `winpthreads.install`. Taking
 d635af4d9 again:
 
 ```console
 $ git checkout -b 20240209-1 d635af4d9
 $ git merge --allow-unrelated-histories --no-commit opam
-$ scripts/gen_install.sh > winpthreads.install
+$ contrib/gen_install.sh > winpthreads.install
 $ git add winpthreads.install
 $ git commit -m 'opam package for 20240209-1'
+```

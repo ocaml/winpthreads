@@ -2,7 +2,7 @@
 * text=auto
 
 # Shell scripts need Unix line endings
-scripts/gen_install.sh text eol=lf
+contrib/gen_install.sh text eol=lf
 
 # Files not needed in the archive
 .gitattributes export-ignore
@@ -14,7 +14,7 @@ config.h.in export-ignore
 configure export-ignore
 configure.ac export-ignore
 m4 export-ignore
-scripts export-ignore
+contrib export-ignore
 src/libgcc/* export-ignore
 src/version.rc export-ignore
 tests export-ignore
